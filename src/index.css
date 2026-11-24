@@ -1,0 +1,425 @@
+@import "tailwindcss";
+
+@variant dark (&:where(.dark, .dark *, [data-theme="dark"], [data-theme="dark"] *));
+
+/* ============================================================
+   BreatheWay — Precision Design System (Cyber Oceanic Aurora)
+   Dual Theme Engine (Light Theme by Default, Dark Theme Optimized)
+   WCAG 2.2 Level AA Compliant
+   ============================================================ */
+
+:root {
+  color-scheme: light;
+  /* ------------------------------------------------------------
+     LIGHT THEME (Default) — Crisp, Clean, Oceanic Precision
+     ------------------------------------------------------------ */
+  --bg-base: #f8fafc;
+  --bg-surface: #ffffff;
+  --bg-surface-elevated: #ffffff;
+  --bg-surface-glass: rgba(255, 255, 255, 0.88);
+  --bg-surface-soft: #f0fdfa;
+  --bg-surface-subtle: #f8fafc;
+  --bg-surface-hover: #f1f5f9;
+
+  /* Borders: Hairline precision with crisp delineation */
+  --border-subtle: rgba(15, 23, 42, 0.08);
+  --border-medium: rgba(15, 23, 42, 0.12);
+  --border-strong: rgba(15, 23, 42, 0.20);
+  --border-primary: rgba(8, 145, 178, 0.35);
+  --border-cyan: rgba(6, 182, 212, 0.40);
+
+  /* Primary Brand (Oceanic Cyan / Teal) */
+  --primary: #0891b2;
+  --primary-light: #06b6d4;
+  --primary-hover: #0e7490;
+  --primary-active: #155e75;
+  --primary-subtle: #ecfeff;
+  --primary-fg: #ffffff;
+  --primary-glow: rgba(8, 145, 178, 0.15);
+
+  /* Secondary & Accents */
+  --secondary: #0284c7;
+  --secondary-glow: rgba(2, 132, 199, 0.15);
+  --accent-cyan: #06b6d4;
+  --accent-teal: #0d9488;
+  --accent-emerald: #10b981;
+  --accent-violet: #8b5cf6;
+  --accent-amber: #f59e0b;
+
+  /* Semantic Status (EPA Standardized AQI Breakpoints) */
+  --status-good: #10b981;
+  --status-moderate: #f59e0b;
+  --status-unhealthy: #f97316;
+  --status-hazardous: #ef4444;
+  --status-critical: #991b1b;
+
+  /* Typography: High-contrast Slate hierarchy */
+  --text-primary: #0f172a;       /* Slate 900 — 15:1 contrast against white */
+  --text-secondary: #334155;     /* Slate 700 — 8.5:1 contrast */
+  --text-muted: #64748b;         /* Slate 500 — 4.6:1 contrast (WCAG AA pass) */
+  --text-subdued: #94a3b8;       /* Slate 400 */
+
+  /* Shadows: Multi-layer Stripe-style elevation without fuzzy blur */
+  --shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.04);
+  --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px -1px rgba(0, 0, 0, 0.05);
+  --shadow-card: 0 1px 3px 0 rgba(0, 0, 0, 0.04), 0 1px 2px -1px rgba(0, 0, 0, 0.03), 0 0 0 1px rgba(15, 23, 42, 0.06);
+  --shadow-elevated: 0 10px 25px -5px rgba(0, 0, 0, 0.06), 0 8px 10px -6px rgba(0, 0, 0, 0.04), 0 0 0 1px rgba(15, 23, 42, 0.08);
+  --shadow-interactive: 0 4px 14px -2px rgba(8, 145, 178, 0.15), 0 0 0 1px rgba(8, 145, 178, 0.35);
+
+  /* Ambient Mesh Gradients */
+  --mesh-gradient: radial-gradient(at 0% 0%, rgba(6, 182, 212, 0.09) 0px, transparent 50%),
+                   radial-gradient(at 100% 0%, rgba(99, 102, 241, 0.07) 0px, transparent 50%),
+                   radial-gradient(at 50% 100%, rgba(16, 185, 129, 0.06) 0px, transparent 50%);
+
+  /* Compatibility & Legacy Tokens */
+  --stadium-bg: #f8fafc;
+  --stadium-surface: #ffffff;
+  --stadium-green: #10b981;
+  --stadium-blue: #0891b2;
+  --stadium-gold: #f59e0b;
+  --stadium-red: #ef4444;
+}
+
+/* ------------------------------------------------------------
+   DARK THEME — Deep Obsidian Cyan & Indigo Aurora
+   ------------------------------------------------------------ */
+:root[data-theme="dark"],
+.dark {
+  color-scheme: dark;
+  --bg-base: #050811;
+  --bg-surface: #0a101f;
+  --bg-surface-elevated: #0f172a;
+  --bg-surface-glass: rgba(10, 16, 31, 0.88);
+  --bg-surface-soft: #0d1527;
+  --bg-surface-subtle: #080d19;
+  --bg-surface-hover: #152038;
+
+  /* Hairline borders with light-catching top inset */
+  --border-subtle: rgba(255, 255, 255, 0.07);
+  --border-medium: rgba(255, 255, 255, 0.12);
+  --border-strong: rgba(255, 255, 255, 0.20);
+  --border-primary: rgba(6, 182, 212, 0.40);
+  --border-cyan: rgba(6, 182, 212, 0.45);
+
+  /* Primary Brand (Electric Cyan / Teal) */
+  --primary: #06b6d4;
+  --primary-light: #22d3ee;
+  --primary-hover: #0891b2;
+  --primary-active: #0e7490;
+  --primary-subtle: rgba(6, 182, 212, 0.12);
+  --primary-fg: #042f2e;
+  --primary-glow: rgba(6, 182, 212, 0.25);
+
+  /* Secondary & Accents */
+  --secondary: #38bdf8;
+  --secondary-glow: rgba(56, 189, 248, 0.22);
+  --accent-cyan: #06b6d4;
+  --accent-teal: #14b8a6;
+  --accent-emerald: #10b981;
+  --accent-violet: #a78bfa;
+  --accent-amber: #fbbf24;
+
+  /* Semantic Status */
+  --status-good: #10b981;
+  --status-moderate: #f59e0b;
+  --status-unhealthy: #f97316;
+  --status-hazardous: #ef4444;
+  --status-critical: #dc2626;
+
+  /* Typography */
+  --text-primary: #f8fafc;       /* Slate 50 — 15.5:1 contrast against base */
+  --text-secondary: #cbd5e1;     /* Slate 300 — 9.5:1 contrast */
+  --text-muted: #94a3b8;         /* Slate 400 — 5.2:1 contrast */
+  --text-subdued: #64748b;       /* Slate 500 */
+
+  /* Shadows: Linear-style deep shadows with light-catching hairline insets */
+  --shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.5);
+  --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.6), inset 0 1px 0 0 rgba(255, 255, 255, 0.05);
+  --shadow-card: 0 4px 20px -2px rgba(0, 0, 0, 0.6), inset 0 1px 0 0 rgba(255, 255, 255, 0.07), 0 0 0 1px rgba(255, 255, 255, 0.07);
+  --shadow-elevated: 0 14px 34px -10px rgba(0, 0, 0, 0.8), inset 0 1px 0 0 rgba(255, 255, 255, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.09);
+  --shadow-interactive: 0 8px 24px -4px rgba(0, 0, 0, 0.7), inset 0 1px 0 0 rgba(255, 255, 255, 0.14), 0 0 0 1px rgba(6, 182, 212, 0.45);
+
+  /* Dark Ambient Mesh Gradients (Aurora Night) */
+  --mesh-gradient: radial-gradient(at 0% 0%, rgba(6, 182, 212, 0.14) 0px, transparent 55%),
+                   radial-gradient(at 100% 0%, rgba(99, 102, 241, 0.12) 0px, transparent 55%),
+                   radial-gradient(at 50% 100%, rgba(16, 185, 129, 0.09) 0px, transparent 60%);
+
+  --stadium-bg: #050811;
+  --stadium-surface: #0a101f;
+  --stadium-green: #10b981;
+  --stadium-blue: #06b6d4;
+  --stadium-gold: #f59e0b;
+  --stadium-red: #ef4444;
+}
+
+/* ------------------------------------------------------------
+   HIGH CONTRAST MODE (Accessibility Enhancement)
+   ------------------------------------------------------------ */
+:root[data-contrast="high"],
+.contrast-125 {
+  --border-subtle: rgba(15, 23, 42, 0.25);
+  --border-medium: rgba(15, 23, 42, 0.35);
+  --border-strong: rgba(15, 23, 42, 0.50);
+  --text-muted: #334155;
+}
+
+:root[data-theme="dark"][data-contrast="high"],
+.dark.contrast-125,
+.dark .contrast-125 {
+  --border-subtle: rgba(255, 255, 255, 0.22);
+  --border-medium: rgba(255, 255, 255, 0.35);
+  --border-strong: rgba(255, 255, 255, 0.55);
+  --text-muted: #cbd5e1;
+}
+
+/* ------------------------------------------------------------
+   Base Document Styles
+   ------------------------------------------------------------ */
+body {
+  background-color: var(--bg-base);
+  color: var(--text-primary);
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: -0.012em;
+  overflow-x: hidden;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  background-image: var(--mesh-gradient);
+  background-attachment: fixed;
+}
+
+/* WCAG 2.4.7 Focus Visible Indicator */
+:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+  border-radius: 8px;
+}
+
+/* ------------------------------------------------------------
+   Precision Surface Panels (Linear & Stripe Craftsmanship)
+   ------------------------------------------------------------ */
+.glass-panel {
+  background: var(--bg-surface-glass);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-card);
+  transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.glass-panel-elevated {
+  background: var(--bg-surface-elevated);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--border-medium);
+  box-shadow: var(--shadow-elevated);
+  transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.glass-panel-interactive {
+  transition: border-color 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-panel-interactive:hover {
+  border-color: var(--border-primary);
+  box-shadow: var(--shadow-interactive);
+  transform: translateY(-2px);
+}
+
+/* Subtle dot grid pattern utility */
+.dot-pattern {
+  background-image: radial-gradient(rgba(15, 23, 42, 0.08) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.dark .dot-pattern {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+}
+
+/* ------------------------------------------------------------
+   Micro-Animations & Transitions
+   ------------------------------------------------------------ */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.04);
+  }
+}
+
+.pulse-glow {
+  animation: pulseGlow 3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.skeleton-shimmer {
+  background: linear-gradient(90deg, rgba(15, 23, 42, 0.04) 25%, rgba(15, 23, 42, 0.08) 50%, rgba(15, 23, 42, 0.04) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.6s infinite;
+}
+
+:root[data-theme="dark"] .skeleton-shimmer,
+.dark .skeleton-shimmer {
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.03) 25%, rgba(255, 255, 255, 0.07) 50%, rgba(255, 255, 255, 0.03) 75%);
+}
+
+/* ------------------------------------------------------------
+   Typography Utilities
+   ------------------------------------------------------------ */
+.font-arabic {
+  font-family: 'Noto Sans Arabic', Tahoma, sans-serif;
+}
+
+.font-mono-numbers {
+  font-family: 'JetBrains Mono', 'Fira Code', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-feature-settings: 'tnum' 1, 'zero' 1;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ------------------------------------------------------------
+   Custom Sleek Scrollbar
+   ------------------------------------------------------------ */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-medium);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-subdued);
+}
+
+/* ------------------------------------------------------------
+   Custom Precision Range Slider
+   ------------------------------------------------------------ */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: #e2e8f0;
+  height: 6px;
+  border-radius: 9999px;
+  outline: none;
+  transition: background 0.15s ease;
+}
+
+:root[data-theme="dark"] input[type="range"],
+.dark input[type="range"] {
+  background: #1e293b;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--primary);
+  cursor: pointer;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+  border: 2px solid #ffffff;
+  transition: transform 0.15s ease, background-color 0.15s ease;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+  background: var(--primary-hover);
+}
+
+input[type="range"]:focus-visible::-webkit-slider-thumb {
+  box-shadow: 0 0 0 3px var(--primary-subtle);
+}
+
+/* ------------------------------------------------------------
+   Dark Theme High-Contrast Enforcement & Fallbacks
+   ------------------------------------------------------------ */
+:root[data-theme="dark"],
+.dark {
+  color-scheme: dark;
+  color: var(--text-primary);
+}
+
+:root[data-theme="dark"] select,
+:root[data-theme="dark"] input,
+:root[data-theme="dark"] textarea,
+:root[data-theme="dark"] button,
+:root[data-theme="dark"] option,
+.dark select,
+.dark input,
+.dark textarea,
+.dark button,
+.dark option {
+  color-scheme: dark;
+}
+
+/* Ensure strong contrast across dark mode for any Slate or Neutral dark text that lacks dark: classes */
+:where([data-theme="dark"], [data-theme="dark"] *, .dark, .dark *) .text-slate-900:not([class*="dark:text-"]) {
+  color: #f8fafc;
+}
+
+:where([data-theme="dark"], [data-theme="dark"] *, .dark, .dark *) .text-slate-800:not([class*="dark:text-"]) {
+  color: #f1f5f9;
+}
+
+:where([data-theme="dark"], [data-theme="dark"] *, .dark, .dark *) .text-slate-700:not([class*="dark:text-"]) {
+  color: #e2e8f0;
+}
+
+:where([data-theme="dark"], [data-theme="dark"] *, .dark, .dark *) .text-slate-600:not([class*="dark:text-"]) {
+  color: #cbd5e1;
+}
+
+:where([data-theme="dark"], [data-theme="dark"] *, .dark, .dark *) .text-slate-500:not([class*="dark:text-"]) {
+  color: #94a3b8;
+}
+
+:where([data-theme="dark"], [data-theme="dark"] *, .dark, .dark *) .text-black:not([class*="dark:text-"]) {
+  color: #ffffff;
+}
+
+:where([data-theme="dark"], [data-theme="dark"] *, .dark, .dark *) .text-gray-900:not([class*="dark:text-"]) {
+  color: #f8fafc;
+}
+
+:where([data-theme="dark"], [data-theme="dark"] *, .dark, .dark *) .text-gray-800:not([class*="dark:text-"]) {
+  color: #f1f5f9;
+}
+
+:where([data-theme="dark"], [data-theme="dark"] *, .dark, .dark *) .text-gray-700:not([class*="dark:text-"]) {
+  color: #e2e8f0;
+}

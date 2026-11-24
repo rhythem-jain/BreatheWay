@@ -1,0 +1,25 @@
+# BreatheWay — Hyperlocal Clean Air Telemetry & Exposure Management Platform
+
+> Hyperlocal multi-pollutant telemetry, GenAI routine optimization, and low-exposure transit routing for resilient urban living. Built for PromptWars Challenge 6 with EPA breakpoints and zero-trust architecture.
+
+## Overview
+
+BreatheWay is an enterprise-grade urban environmental intelligence platform designed to translate granular municipal sensor telemetry into actionable daily personal exposure decisions. The platform combines real-time multi-pollutant dispersion tracking, atmospheric thermal inversion detection, Dijkstra-optimized low-exposure transit corridors, CADR-based indoor air quality calculation, and AI-powered schedule optimization.
+
+### Core Capabilities
+- **Hyperlocal Air Telemetry**: Real-time multi-pollutant monitoring (PM2.5, PM10, NO2, O3, CO, SO2) with microclimate tracking across five distinct municipal monitoring sectors.
+- **Interactive Smog Heatmap**: High-fidelity spatial visualization with isopleth contours, wind vector plumes, and interactive sector telemetry cards.
+- **GenAI Routine Optimizer**: Deterministic meteorological forecasts combined with Google Gemini 3.1 neural recommendations for outdoor activity planning.
+- **Low-Exposure Transit Corridors**: Multimodal Dijkstra routing engine comparing respiratory intake dose across walking, cycling, transit, and driving.
+- **Indoor Air Quality (IAQ) Center**: Clean Air Delivery Rate (CADR) calculation, ACH estimation, and an inversion-aware window ventilation schedule.
+- **Community Smog Abatement Hub**: Collective emission reduction pledges and emergency smog broadcast alerts.
+
+## Links
+
+- [Live Web Application](https://prompt-wars-challenge-6.vercel.app/)
+- [Air Telemetry & Heatmap](https://prompt-wars-challenge-6.vercel.app/#dashboard)
+- [Routine Optimizer](https://prompt-wars-challenge-6.vercel.app/#routine)
+- [Transit Exposure Planner](https://prompt-wars-challenge-6.vercel.app/#transit)
+- [Indoor Air Quality Center](https://prompt-wars-challenge-6.vercel.app/#iaq)
+- [Community Smog Abatement](https://prompt-wars-challenge-6.vercel.app/#community)
+- [Machine-Readable Agent Data](https://prompt-wars-challenge-6.vercel.app/.well-known/ard.json)
